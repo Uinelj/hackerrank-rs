@@ -8,12 +8,9 @@ fn get_input() -> String {
 }
 
 fn get_input_u32() -> u32 {
-    let mut buffer = String::new();
-    let number : u32 = buffer.trim()
-                                   .parse()
-                                   .ok()
-                                   .expect("parse error");
-    return number
+    let buffer = get_input();
+    let mut parsed_buffer : u32 = buffer.trim().parse::<u32>().unwrap();
+    return parsed_buffer;
 }
 
 fn is_grade_valid(grade: u32) -> bool {
@@ -26,7 +23,7 @@ fn is_grade_valid(grade: u32) -> bool {
 fn apply_grading_rules(grade: u32) -> u32 {
     let mut modified_grade = grade;
     match modified_grade {
-        0...38 => return modified_grade,
+        0...37 => return modified_grade,
         _ => {
             if modified_grade%5 >= 3 { 
                 modified_grade += 5 - modified_grade%5;

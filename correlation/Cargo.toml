@@ -1,0 +1,6 @@
+[package]
+name = "correlation"
+version = "0.1.0"
+authors = ["uj <julien@georges.tech>"]
+
+[dependencies]
